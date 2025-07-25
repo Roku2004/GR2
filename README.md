@@ -78,6 +78,18 @@ Xây dựng một hệ thống web xem phim theo kiến trúc microservices, h�
 | Stream Video         | Spring Web + Http Byte Range                      |
 | Monitoring           | Spring Boot Actuator, Micrometer, Spring Boot Admin (tùy chọn) |
 
+## 💾 Database cho từng Service
+
+| Service              | Database                                               |
+|----------------------|-------------------------------------------------------|
+| user-service         | PostgreSQL                                      |
+| movie-service        | MongoDB (dữ liệu phim động, dễ mở rộng)               |
+| auth-service         | PostgreSQL (tài khoản, refresh token)                |
+| history-service      | MongoDB (xem lịch sử, thời gian, đoạn đã xem)        |
+| review-service       | MongoDB                                               |
+| catalog-service      | PostgreSQL                                           |
+| media-stream-service | Không cần DB, chỉ đọc file/video từ thư mục hoặc cloud |
+
 ## 🔐 Luồng xử lý (Flow) người dùng
 
 1. Người dùng truy cập qua api-gateway
