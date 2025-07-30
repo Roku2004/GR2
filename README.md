@@ -55,7 +55,6 @@ Xây dựng một hệ thống web xem phim theo kiến trúc microservices, h�
 | config-server         | Quản lý cấu hình tập trung từ repo config-repo             |
 | eureka-server         | Quản lý đăng ký và khám phá các service                    |
 | api-gateway           | Cổng truy cập vào toàn bộ hệ thống, xử lý route, filter, auth |
-| auth-service          | Xử lý xác thực, tạo JWT, kiểm tra token                    |
 | user-service          | Quản lý người dùng: đăng ký, thông tin cá nhân, vai trò    |
 | catalog-service       | Quản lý danh mục phim: thể loại, danh sách phim theo thể loại |
 | movie-service         | Thông tin chi tiết phim: tên, mô tả, thời lượng, diễn viên |
@@ -84,7 +83,6 @@ Xây dựng một hệ thống web xem phim theo kiến trúc microservices, h�
 |----------------------|-------------------------------------------------------|
 | user-service         | PostgreSQL                                      |
 | movie-service        | MongoDB (dữ liệu phim động, dễ mở rộng)               |
-| auth-service         | PostgreSQL (tài khoản, refresh token)                |
 | history-service      | MongoDB (xem lịch sử, thời gian, đoạn đã xem)        |
 | review-service       | MongoDB                                               |
 | catalog-service      | PostgreSQL                                           |
@@ -113,12 +111,11 @@ movie-streaming-platform/
 │
 ├── config-server/
 ├── config-repo/               ← Chứa file YAML cấu hình
-│   ├── auth-service.yml
+│   ├── user-service.yml
 │   ├── movie-service.yml
 │   └── ...
 ├── eureka-server/
 ├── api-gateway/
-├── auth-service/
 ├── user-service/
 ├── movie-service/
 ├── catalog-service/
