@@ -46,16 +46,16 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public String generateToken(String email) {
-        UserDetails userDetails = userService.loadUserByUsername(email);
+    public String generateToken(String username) {
+        UserDetails userDetails = userService.loadUserByUsername(username);
 
-        List<String> author = userDetails.getAuthorities().stream()
+        List<String> authorities = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
         return Jwts.builder()
-                .claim("author", author)
-                .subject(email)
+                .claim("authorities", authorities)
+                .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(getKey())

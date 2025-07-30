@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CoolRequestSetting">
+    <option name="serializePaths">
+      <list>
+        <option value="C:\Users\ASUS\.config\.cool-request\request\serialize\d62322ec20594e30a807525646e211c9" />
+        <option value="C:\Users\ASUS\.config\.cool-request\request\serialize\600d789fa14e444dac06e7ea1771ac34" />
+      </list>
+    </option>
     <option name="projectCachePath" value="project-eccdc472-023b-44a9-9370-39fac37d6ac8" />
   </component>
 </project>
